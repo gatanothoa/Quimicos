@@ -1,0 +1,816 @@
+/* ==========================================================================
+   GLASSMORPHISM EFFECTS
+   ========================================================================== */
+
+/* Base glassmorphism utilities */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-light {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation glassmorphism */
+.navbar.glass-nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Product cards glassmorphism */
+.product-card.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card.glass-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 102, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Service items glassmorphism */
+.service-item.glass-service {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats section glassmorphism */
+.stat-item.glass-stat {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item.glass-stat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 102, 0, 0.4);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 102, 0, 0.2);
+}
+
+.stat-item.glass-stat:active {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(255, 102, 0, 0.3);
+}
+
+/* Efectos especiales para contadores */
+.stat-item.glass-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 102, 0, 0.2), 
+        transparent);
+    transition: left 0.6s;
+}
+
+.stat-item.glass-stat:hover::before {
+    left: 100%;
+}
+
+.stat-item.glass-stat::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.stat-item.glass-stat.clicked::after {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    animation: rippleEffect 0.6s ease-out;
+}
+
+.stat-item.glass-stat.animate {
+    animation: statPulse 0.8s ease-in-out;
+}
+
+/* Animaciones para números */
+.stat-number {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.stat-item.glass-stat:hover .stat-number {
+    transform: scale(1.15);
+    color: var(--secondary-color);
+    text-shadow: 0 0 20px rgba(255, 102, 0, 0.5);
+}
+
+.stat-item.glass-stat.clicked .stat-number {
+    animation: numberBounce 0.6s ease-in-out;
+}
+
+/* Iconos con efectos */
+.stat-icon {
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item.glass-stat:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+    color: var(--secondary-color);
+    filter: drop-shadow(0 0 10px rgba(255, 102, 0, 0.6));
+}
+
+.stat-item.glass-stat.clicked .stat-icon {
+    animation: iconSpin 0.8s ease-in-out;
+}
+
+/* Etiquetas con efectos */
+.stat-label {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-item.glass-stat:hover .stat-label {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+}
+
+/* Keyframes para animaciones */
+@keyframes rippleEffect {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+@keyframes statPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 20px 50px rgba(255, 102, 0, 0.3);
+    }
+}
+
+@keyframes numberBounce {
+    0%, 100% {
+        transform: scale(1.15);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    75% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes iconSpin {
+    0% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(360deg);
+    }
+}
+
+/* Efectos específicos por tipo de contador */
+.stat-item.glass-stat[data-type="experience"]:hover {
+    border-color: rgba(0, 102, 204, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 102, 204, 0.2);
+}
+
+.stat-item.glass-stat[data-type="clients"]:hover {
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+}
+
+.stat-item.glass-stat[data-type="products"]:hover {
+    border-color: rgba(156, 39, 176, 0.4);
+    box-shadow: 0 15px 40px rgba(156, 39, 176, 0.2);
+}
+
+.stat-item.glass-stat[data-type="quality"]:hover {
+    border-color: rgba(255, 193, 7, 0.4);
+    box-shadow: 0 15px 40px rgba(255, 193, 7, 0.2);
+}
+
+/* Contact form glassmorphism */
+.contact-form.glass-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+}
+
+/* Loading screen glassmorphism */
+.loading-content.glass-loading {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+}
+
+/* Hero card glassmorphism */
+.hero-card.glass-hero {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer glassmorphism */
+.footer.glass-footer {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* About features glassmorphism */
+.feature-item.glass-feature {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive glassmorphism adjustments */
+@media (max-width: 768px) {
+    .glass,
+    .glass-dark,
+    .glass-light {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+    
+    .navbar.glass-nav {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+}
+
+/* Animation for glassmorphism elements */
+@keyframes glassShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.glass-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: glassShimmer 3s infinite;
+    pointer-events: none;
+}
+
+/* ============= CONTADORES CON DISEÑO MODERNO Y ELEGANTE ============= */
+.glass-stat {
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    
+    /* Gradiente moderno como fondo base */
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+    
+    /* Borde con gradiente animado */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    
+    /* Sombra sofisticada */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto de borde animado */
+.glass-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2px;
+    background: linear-gradient(45deg, 
+        var(--primary-color, #0066cc),
+        var(--secondary-color, #ff6600),
+        var(--primary-color, #0066cc)
+    );
+    background-size: 300% 300%;
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: borderGlow 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Efecto de brillo interno */
+.glass-stat::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    opacity: 0.6;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.glass-stat > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Efectos hover modernos y únicos por tipo */
+.glass-stat[data-type="experience"]:hover {
+    transform: translateY(-12px) rotateX(5deg);
+    background: radial-gradient(circle at center, 
+        rgba(0, 102, 204, 0.2) 0%,
+        rgba(0, 102, 204, 0.1) 50%,
+        rgba(0, 102, 204, 0.05) 100%
+    );
+    box-shadow: 
+        0 20px 60px rgba(0, 102, 204, 0.3),
+        0 8px 20px rgba(0, 102, 204, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-stat[data-type="experience"]:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, 
+        #0066cc, #4299ff, #0066cc, #1a75d9
+    );
+}
+
+.glass-stat[data-type="clients"]:hover {
+    transform: translateY(-12px) rotateX(5deg);
+    background: radial-gradient(circle at center, 
+        rgba(52, 211, 153, 0.2) 0%,
+        rgba(52, 211, 153, 0.1) 50%,
+        rgba(52, 211, 153, 0.05) 100%
+    );
+    box-shadow: 
+        0 20px 60px rgba(52, 211, 153, 0.3),
+        0 8px 20px rgba(52, 211, 153, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-stat[data-type="clients"]:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, 
+        #34d399, #6ee7b7, #34d399, #10b981
+    );
+}
+
+.glass-stat[data-type="products"]:hover {
+    transform: translateY(-12px) rotateX(5deg);
+    background: radial-gradient(circle at center, 
+        rgba(168, 85, 247, 0.2) 0%,
+        rgba(168, 85, 247, 0.1) 50%,
+        rgba(168, 85, 247, 0.05) 100%
+    );
+    box-shadow: 
+        0 20px 60px rgba(168, 85, 247, 0.3),
+        0 8px 20px rgba(168, 85, 247, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-stat[data-type="products"]:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, 
+        #a855f7, #c084fc, #a855f7, #9333ea
+    );
+}
+
+.glass-stat[data-type="quality"]:hover {
+    transform: translateY(-12px) rotateX(5deg);
+    background: radial-gradient(circle at center, 
+        rgba(251, 191, 36, 0.2) 0%,
+        rgba(251, 191, 36, 0.1) 50%,
+        rgba(251, 191, 36, 0.05) 100%
+    );
+    box-shadow: 
+        0 20px 60px rgba(251, 191, 36, 0.3),
+        0 8px 20px rgba(251, 191, 36, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.glass-stat[data-type="quality"]:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, 
+        #fbbf24, #fcd34d, #fbbf24, #f59e0b
+    );
+}
+
+/* Efectos de click con animaciones premium */
+.glass-stat.clicked {
+    transform: translateY(-8px) scale(1.02) rotateX(10deg);
+    animation: premiumClick 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-stat.animate .stat-number {
+    animation: numberPremium 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+}
+
+.glass-stat.animate .stat-icon {
+    animation: iconPremium 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-stat.animate .stat-label {
+    animation: labelGlow 1.5s ease-out;
+}
+
+/* Efectos en elementos internos */
+.glass-stat .stat-number {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+    background: linear-gradient(135deg, 
+        var(--primary-color, #0066cc),
+        var(--secondary-color, #ff6600)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.glass-stat .stat-icon {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.glass-stat .stat-label {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.glass-stat:hover .stat-number {
+    transform: scale(1.2);
+    filter: 
+        drop-shadow(0 0 20px currentColor)
+        drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.glass-stat:hover .stat-icon {
+    transform: scale(1.15) rotate(10deg);
+    filter: 
+        drop-shadow(0 0 15px currentColor)
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.glass-stat:hover .stat-label {
+    opacity: 1;
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Animaciones de entrada secuencial mejoradas */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px) rotateX(20deg);
+    animation: fadeInUpPremium 1s ease-out forwards;
+}
+
+@keyframes fadeInUpPremium {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) rotateX(20deg) scale(0.9);
+    }
+    60% {
+        opacity: 0.8;
+        transform: translateY(-5px) rotateX(-2deg) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg) scale(1);
+    }
+}
+
+/* ============= KEYFRAMES PREMIUM Y SOFISTICADOS ============= */
+@keyframes borderGlow {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes premiumClick {
+    0% {
+        transform: translateY(-8px) scale(1.02) rotateX(10deg);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+    30% {
+        transform: translateY(-15px) scale(1.05) rotateX(15deg);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: translateY(-12px) scale(1.02) rotateX(5deg);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@keyframes numberPremium {
+    0% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    20% {
+        transform: scale(1.6) rotateY(10deg);
+        opacity: 1;
+    }
+    40% {
+        transform: scale(1.8) rotateY(-5deg);
+        opacity: 1;
+    }
+    60% {
+        transform: scale(1.5) rotateY(3deg);
+        opacity: 1;
+    }
+    80% {
+        transform: scale(1.3) rotateY(-1deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes iconPremium {
+    0% {
+        transform: scale(1.15) rotate(10deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: scale(1.4) rotate(180deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.6) rotate(270deg);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1.3) rotate(350deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.15) rotate(370deg);
+        opacity: 1;
+    }
+}
+
+@keyframes labelGlow {
+    0% {
+        opacity: 0.9;
+        text-shadow: none;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Efectos de partículas para clicks especiales */
+.glass-stat.double-clicked::before {
+    animation: particleExplosion 1s ease-out;
+}
+
+@keyframes particleExplosion {
+    0% {
+        box-shadow: 
+            0 0 0 0 rgba(255, 255, 255, 0.8),
+            0 0 0 0 rgba(255, 102, 0, 0.6),
+            0 0 0 0 rgba(0, 102, 204, 0.4);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 0 40px rgba(255, 102, 0, 0.3),
+            0 0 0 60px rgba(0, 102, 204, 0.2);
+    }
+    100% {
+        box-shadow: 
+            0 0 0 50px rgba(255, 255, 255, 0),
+            0 0 0 80px rgba(255, 102, 0, 0),
+            0 0 0 120px rgba(0, 102, 204, 0);
+    }
+}
+
+/* ============= EFECTOS RESPONSIVOS Y OPTIMIZACIONES ============= */
+@media (max-width: 768px) {
+    .glass-stat {
+        margin-bottom: 1.5rem;
+        min-height: 120px;
+        padding: 1.5rem;
+    }
+    
+    .glass-stat:hover {
+        transform: translateY(-8px) rotateX(3deg);
+    }
+    
+    .glass-stat.clicked {
+        transform: translateY(-6px) scale(1.01) rotateX(8deg);
+    }
+    
+    .glass-stat .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .glass-stat .stat-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .glass-stat .stat-label {
+        font-size: 0.9rem;
+    }
+    
+    @keyframes premiumClick {
+        0% {
+            transform: translateY(-6px) scale(1.01) rotateX(8deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        30% {
+            transform: translateY(-10px) scale(1.03) rotateX(12deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+        100% {
+            transform: translateY(-8px) scale(1.01) rotateX(3deg);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+        }
+    }
+}
+
+/* Estilos adicionales para mejorar la experiencia */
+.glass-stat {
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efectos de carga progresiva */
+.glass-stat.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.glass-stat.loading::before {
+    animation: loadingShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingShimmer {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+/* Mejoras de accesibilidad */
+.glass-stat:focus {
+    outline: 2px solid var(--secondary-color, #ff6600);
+    outline-offset: 4px;
+}
+
+.glass-stat:focus-visible {
+    outline: 2px solid var(--secondary-color, #ff6600);
+    outline-offset: 4px;
+}

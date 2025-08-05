@@ -1,0 +1,452 @@
+/* ==========================================================================
+   OPTIMIZACIÓN EXTREMA PARA MÓVILES PEQUEÑOS (320px - 480px)
+   ========================================================================== */
+
+/* iPhone SE, Galaxy S5, etc. */
+@media (max-width: 480px) {
+    /* Variables específicas para móviles pequeños */
+    :root {
+        --mobile-padding: 0.75rem;
+        --mobile-gap: 0.5rem;
+        --mobile-border-radius: 8px;
+    }
+    
+    /* Layout base */
+    .container {
+        padding: 0 var(--mobile-padding);
+    }
+    
+    /* Navegación ultra compacta */
+    .navbar {
+        padding: 0.4rem 0.75rem;
+        height: 60px;
+    }
+    
+    .nav-logo {
+        height: 40px;
+    }
+    
+    .nav-menu {
+        top: 60px;
+        height: calc(100vh - 60px);
+        padding: 0.75rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem;
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .nav-cta {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        margin: 0.75rem 0;
+    }
+    
+    /* Hero ultra compacto */
+    .hero {
+        min-height: calc(100vh - 60px);
+        padding: 1.5rem 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        margin-bottom: 0.75rem;
+    }
+    
+    .title-highlight {
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
+    }
+    
+    .hero-buttons {
+        gap: 0.75rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        max-width: 250px;
+    }
+    
+    .hero-card {
+        max-width: 250px;
+        padding: 1rem;
+    }
+    
+    /* Stats ultra compactas */
+    .stats-section {
+        padding: 2rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1rem 0.75rem;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+        line-height: 1.2;
+    }
+    
+    /* Productos ultra compactos */
+    .products-section,
+    .services-section,
+    .about-section,
+    .contact-section {
+        padding: 3rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
+    }
+    
+    .product-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-image {
+        height: 160px;
+    }
+    
+    .product-content {
+        padding: 1rem;
+    }
+    
+    .product-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    
+    .product-features li {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .product-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Servicios ultra compactos */
+    .service-item {
+        padding: 1.5rem 1rem;
+    }
+    
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .service-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-content ul li {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    /* About ultra compacto */
+    .about-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        padding: 0 0.25rem;
+    }
+    
+    .feature-item {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .feature-item i {
+        font-size: 1.3rem;
+        margin-right: 0.75rem;
+        min-width: 25px;
+    }
+    
+    .feature-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .feature-item p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    /* Contacto ultra compacto */
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .contact-details h3 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.9rem;
+        margin: 0.1rem 0;
+    }
+    
+    /* Formulario ultra compacto */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+        border-radius: 6px;
+    }
+    
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 20px;
+    }
+    
+    /* Footer ultra compacto */
+    .footer {
+        padding: 1.5rem 0 1rem;
+    }
+    
+    .footer-section {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-logo img {
+        height: 40px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 0.3rem;
+    }
+    
+    .footer-section ul li a {
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem;
+        padding: 0 0.5rem;
+    }
+    
+    /* Botones flotantes ultra compactos */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .back-to-top {
+        bottom: 75px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    /* Loading screen compacto */
+    .loading-logo img {
+        width: 150px;
+    }
+    
+    .loading-content p {
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+    }
+    
+    /* Animaciones más rápidas en móviles pequeños */
+    * {
+        transition-duration: 0.2s !important;
+        animation-duration: 0.8s !important;
+    }
+    
+    /* Reducir sombras para mejor performance */
+    .product-card,
+    .service-item,
+    .contact-item,
+    .feature-item {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Optimizar imágenes SVG */
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .about-image .image-container {
+        max-width: 280px;
+    }
+}
+
+/* Ultra pequeños (Galaxy Fold, etc.) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .stat-number {
+        font-size: 1.4rem;
+    }
+    
+    .product-title,
+    .service-content h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Optimización para landscape en móviles pequeños */
+@media (max-width: 480px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+    
+    .hero-content {
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .title-highlight {
+        font-size: 1.8rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .hero-buttons .btn {
+        max-width: 140px;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .stat-item {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .whatsapp-float,
+    .back-to-top {
+        right: 10px;
+    }
+}

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Limpieza del Chamaco Perro - Productos Químicos Profesionales</title>
+    <meta name="description" content="Distribuidora especializada en productos químicos de limpieza de alta calidad. Detergentes industriales, desinfectantes, ácidos y más para uso profesional.">
+    <meta name="keywords" content="productos químicos, limpieza industrial, detergentes, desinfectantes, México, venta mayoreo">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tienda de Limpieza del Chamaco Perro">
+    <meta property="og:description" content="La mejor selección de productos químicos de limpieza para uso industrial y profesional">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧽</text></svg>">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Fallback for CSS loading issues -->
+    <div class="no-css-fallback" id="no-css-fallback">
+        <div>
+            <h1>🐕 Chamaco Perro</h1>
+            <p>Los recursos no se pudieron cargar correctamente.</p>
+            <button onclick="window.location.reload()" style="background: #ff6b6b; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                Reintentar
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <i class="fas fa-spray-can"></i>
+                <h2>Chamaco Perro</h2>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Cargando productos de calidad...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-spray-can"></i>
+                    <span>Chamaco Perro</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="#productos" class="nav-link">Productos</a></li>
+                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="cart-btn" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="highlight">🧽</span>
+                        Productos de Limpieza
+                        <span class="text-gradient">de Calidad</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Distribuidora especializada en químicos de limpieza para uso 
+                        industrial y profesional. Más de 15 años de experiencia.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Ver Catálogo
+                        </a>
+                        <a href="#contacto" class="btn btn-outline">
+                            <i class="fas fa-phone"></i>
+                            Cotizar
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-award"></i>
+                        <h3>15+ Años</h3>
+                        <p>de Experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>Desliza para explorar</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="stat-number" data-count="250">0</div>
+                    <div class="stat-label">Productos Disponibles</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="2500">0</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% Calidad Garantizada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="productos" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🧪 Catálogo de Productos</h2>
+                <p class="section-subtitle">
+                    Selección premium de productos químicos para todas tus necesidades de limpieza
+                </p>
+            </div>
+            
+            <!-- Product Filters -->
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="acids">Ácidos</button>
+                <button class="filter-btn" data-filter="detergents">Detergentes</button>
+                <button class="filter-btn" data-filter="disinfectants">Desinfectantes</button>
+                <button class="filter-btn" data-filter="solvents">Solventes</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center">
+                <button class="btn btn-outline" id="load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    Cargar Más Productos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🚚 Nuestros Servicios</h2>
+                <p class="section-subtitle">
+                    Soluciones completas para tu negocio
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregas en 24-48 horas en área metropolitana</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Venta Mayoreo</h3>
+                    <p>Precios especiales para compras al mayoreo</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Asesoría Técnica</h3>
+                    <p>Consultoría especializada para tu industria</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Productos con certificaciones de calidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">🏢 Sobre Nosotros</h2>
+                    <p>
+                        Con más de 15 años en el mercado, somos una empresa mexicana 
+                        especializada en la distribución de productos químicos de limpieza 
+                        para uso industrial y comercial.
+                    </p>
+                    <p>
+                        Nuestro compromiso es ofrecer productos de la más alta calidad 
+                        al mejor precio, respaldados por un servicio excepcional y 
+                        asesoría técnica especializada.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Productos certificados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Entregas puntuales</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Precios competitivos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atención personalizada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <i class="fas fa-industry"></i>
+                            <p>Instalaciones Modernas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📞 Contáctanos</h2>
+                <p class="section-subtitle">
+                    Estamos listos para atender tus necesidades
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Teléfono</h3>
+                        <p>+52 55 1234 5678</p>
+                        <p>Lun - Vie: 8:00 AM - 6:00 PM</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+52 55 1234 5678</p>
+                        <p>Disponible 24/7</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>ventas@chamacoperro.mx</p>
+                        <p>cotizaciones@chamacoperro.mx</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Ubicación</h3>
+                        <p>Ciudad de México</p>
+                        <p>Área Metropolitana</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="cotizacion">Solicitar Cotización</option>
+                                <option value="informacion">Información de Productos</option>
+                                <option value="soporte">Soporte Técnico</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🛒 Carrito de Compras</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div id="cart-items" class="cart-items">
+                    <!-- Cart items will be loaded here -->
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <strong>Total: $<span id="cart-total">0.00</span></strong>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <button class="btn btn-outline" id="clear-cart">
+                            <i class="fas fa-trash"></i>
+                            Limpiar Carrito
+                        </button>
+                        <button class="btn btn-primary" id="checkout-btn">
+                            <i class="fas fa-credit-card"></i>
+                            Solicitar Cotización
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-spray-can"></i>
+                        <span>Chamaco Perro</span>
+                    </div>
+                    <p>
+                        Tu proveedor confiable de productos químicos de limpieza 
+                        para uso industrial y comercial.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#productos">Ácidos</a></li>
+                        <li><a href="#productos">Detergentes</a></li>
+                        <li><a href="#productos">Desinfectantes</a></li>
+                        <li><a href="#productos">Solventes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Entrega Rápida</a></li>
+                        <li><a href="#servicios">Venta Mayoreo</a></li>
+                        <li><a href="#servicios">Asesoría Técnica</a></li>
+                        <li><a href="#contacto">Cotizaciones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            +52 55 1234 5678
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            ventas@chamacoperro.mx
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Ciudad de México
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tienda de Limpieza del Chamaco Perro. Todos los derechos reservados.</p>
+                <p>🐕 ¡La limpieza más perrona de México!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript with error handling -->
+    <script>
+        // Error handling and loading verification
+        window.ChamacoPerroLoader = {
+            errors: [],
+            loadedModules: [],
+            
+            logError: function(error, module) {
+                console.error(`Error loading ${module}:`, error);
+                this.errors.push({ module, error: error.message || error });
+            },
+            
+            logSuccess: function(module) {
+                console.log(`✅ ${module} loaded successfully`);
+                this.loadedModules.push(module);
+            },
+            
+            checkAllLoaded: function() {
+                const requiredModules = ['data.js', 'components.js', 'animations.js', 'main.js'];
+                const allLoaded = requiredModules.every(module => 
+                    this.loadedModules.includes(module)
+                );
+                
+                if (allLoaded && this.errors.length === 0) {
+                    console.log("🎉 All modules loaded successfully!");
+                    document.body.classList.add('app-ready');
+                } else if (this.errors.length > 0) {
+                    console.error("❌ Errors during loading:", this.errors);
+                    this.showFallbackUI();
+                }
+            },
+            
+            showFallbackUI: function() {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.innerHTML = `
+                        <div class="loading-container">
+                            <div class="error-content" style="text-align: center; color: #fff;">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #ff6b6b; margin-bottom: 1rem;"></i>
+                                <h2 style="margin-bottom: 1rem;">Error de Carga</h2>
+                                <p style="margin-bottom: 2rem;">Algunos recursos no se pudieron cargar correctamente.</p>
+                                <button onclick="window.location.reload()" 
+                                        style="background: #4facfe; color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-size: 1rem;">
+                                    🔄 Reintentar
+                                </button>
+                                <br><br>
+                                <details style="text-align: left; max-width: 400px; margin: 0 auto;">
+                                    <summary style="cursor: pointer; margin-bottom: 10px;">Ver detalles técnicos</summary>
+                                    <pre style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; font-size: 0.8rem; overflow: auto;">
+${JSON.stringify(this.errors, null, 2)}
+                                    </pre>
+                                </details>
+                            </div>
+                        </div>
+                    `;
+                    loadingScreen.style.display = 'flex';
+                }
+            }
+        };
+    </script>
+    
+    <!-- Load JavaScript modules with error handling -->
+    <script>
+        (function() {
+            const scripts = [
+                'assets/js/data.js',
+                'assets/js/components.js', 
+                'assets/js/animations.js',
+                'assets/js/main.js'
+            ];
+            
+            let loadedCount = 0;
+            
+            function loadScript(src) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.async = false; // Maintain order
+                    
+                    script.onload = () => {
+                        const moduleName = src.split('/').pop();
+                        window.ChamacoPerroLoader.logSuccess(moduleName);
+                        loadedCount++;
+                        
+                        if (loadedCount === scripts.length) {
+                            setTimeout(() => {
+                                window.ChamacoPerroLoader.checkAllLoaded();
+                            }, 100);
+                        }
+                        resolve();
+                    };
+                    
+                    script.onerror = () => {
+                        const moduleName = src.split('/').pop();
+                        const error = new Error(`Failed to load ${src}`);
+                        window.ChamacoPerroLoader.logError(error, moduleName);
+                        reject(error);
+                    };
+                    
+                    document.head.appendChild(script);
+                });
+            }
+            
+            // Load scripts sequentially
+            async function loadAllScripts() {
+                try {
+                    for (const src of scripts) {
+                        await loadScript(src);
+                    }
+                } catch (error) {
+                    console.error('Script loading failed:', error);
+                    window.ChamacoPerroLoader.showFallbackUI();
+                }
+            }
+            
+            // Start loading when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadAllScripts);
+            } else {
+                loadAllScripts();
+            }
+        })();
+    </script>
+    
+    <!-- Analytics (placeholder) -->
+    <script>
+        // Google Analytics or other tracking code would go here
+        console.log("🐕 Tienda del Chamaco Perro - Versión Compleja iniciando...");
+        
+        // Check if CSS is loaded properly
+        setTimeout(function() {
+            const testElement = document.querySelector('.loading-screen');
+            if (testElement) {
+                const computedStyle = window.getComputedStyle(testElement);
+                if (computedStyle.position !== 'fixed') {
+                    // CSS didn't load properly
+                    console.warn('CSS loading issues detected');
+                    const fallback = document.getElementById('no-css-fallback');
+                    if (fallback) {
+                        fallback.classList.add('show');
+                    }
+                }
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

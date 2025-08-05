@@ -1,0 +1,59 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6600;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8f00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="400" height="300" fill="#f8f9fa" rx="20"/>
+  
+  <!-- Elementos decorativos -->
+  <circle cx="350" cy="50" r="30" fill="#e3f2fd" opacity="0.5"/>
+  <circle cx="50" cy="250" r="20" fill="#fff3e0" opacity="0.7"/>
+  
+  <!-- Contenedor principal -->
+  <rect x="50" y="50" width="300" height="200" fill="url(#cardGradient)" rx="15"/>
+  
+  <!-- Iconos de productos -->
+  <g transform="translate(80, 80)">
+    <!-- Etiqueta -->
+    <rect x="0" y="10" width="40" height="30" fill="white" rx="5"/>
+    <rect x="5" y="15" width="30" height="4" fill="#1976d2"/>
+    <rect x="5" y="22" width="20" height="3" fill="#1976d2"/>
+    <rect x="5" y="28" width="25" height="3" fill="#1976d2"/>
+    
+    <!-- Ribbon -->
+    <rect x="60" y="5" width="50" height="15" fill="url(#iconGradient)" rx="7"/>
+    <rect x="65" y="25" width="40" height="10" fill="url(#iconGradient)" rx="5"/>
+    
+    <!-- Impresora -->
+    <rect x="140" y="10" width="50" height="30" fill="white" rx="5"/>
+    <rect x="145" y="15" width="40" height="4" fill="#ff6600"/>
+    <rect x="145" y="22" width="35" height="3" fill="#ff6600"/>
+    <rect x="145" y="28" width="30" height="3" fill="#ff6600"/>
+    <rect x="170" y="35" width="15" height="8" fill="#424242" rx="2"/>
+  </g>
+  
+  <!-- Texto -->
+  <text x="200" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">
+    Etiquetas • Ribbons • Impresoras
+  </text>
+  
+  <!-- Elementos decorativos adicionales -->
+  <circle cx="100" cy="220" r="3" fill="white" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="200" r="4" fill="white" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="230" r="2" fill="#ff6600" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

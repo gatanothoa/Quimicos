@@ -1,0 +1,183 @@
+/* ==========================================================================
+   OPTIMIZACIÓN MÓVIL ESPECÍFICA
+   ========================================================================== */
+
+/* Resetear problemas de viewport en móviles */
+@viewport {
+    width: device-width;
+    zoom: 1;
+}
+
+/* Corregir variables para móviles */
+@media (max-width: 768px) {
+    :root {
+        /* Forzar colores correctos en móviles */
+        --bg-primary: #000000 !important;
+        --bg-secondary: #1a1a1a !important;
+        --text-primary: #ffffff !important;
+        --light-blue: #0066cc !important; /* Cambiar a azul corporativo */
+    }
+    
+    /* Body específico para móviles */
+    body {
+        background: #000000 !important;
+        color: #ffffff !important;
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    
+    /* Hero corregido para móviles */
+    .hero {
+        background: #000000 !important;
+        min-height: 100vh;
+        padding: 80px 0 40px 0;
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(45deg, 
+            rgba(0, 0, 0, 0.8) 0%, 
+            rgba(26, 26, 26, 0.6) 50%, 
+            rgba(0, 0, 0, 0.9) 100%) !important;
+    }
+    
+    /* Logo móvil */
+    .nav-logo {
+        height: 45px !important;
+        width: auto;
+    }
+    
+    /* Navegación móvil corregida */
+    .navbar {
+        background: rgba(0, 0, 0, 0.95) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 102, 0, 0.2);
+    }
+    
+    /* Botones mejorados para móviles */
+    .btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+        min-height: 48px; /* Accesibilidad táctil */
+        border-radius: 25px;
+    }
+    
+    /* Contadores móviles */
+    .stats-section {
+        background: #000000 !important;
+        padding: 40px 0;
+    }
+    
+    .stat-item {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 102, 0, 0.2);
+        margin-bottom: 20px;
+    }
+    
+    /* Productos móviles */
+    .products-section {
+        background: #000000 !important;
+        padding: 40px 0;
+    }
+    
+    .product-card {
+        margin-bottom: 30px;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .product-image {
+        background: linear-gradient(135deg, 
+            rgba(0, 102, 204, 0.1) 0%, 
+            rgba(26, 26, 26, 0.8) 100%) !important;
+    }
+    
+    /* Servicios móviles */
+    .services-section {
+        background: #000000 !important;
+        padding: 40px 0;
+    }
+    
+    .service-item {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 30px;
+    }
+    
+    /* About móvil */
+    .about-section {
+        background: #000000 !important;
+        padding: 40px 0;
+    }
+    
+    /* Contacto móvil */
+    .contact-section {
+        background: #000000 !important;
+        padding: 40px 0;
+    }
+    
+    .contact-form {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Footer móvil */
+    .footer {
+        background: rgba(0, 0, 0, 0.95) !important;
+        border-top: 1px solid rgba(255, 102, 0, 0.2);
+    }
+    
+    /* Formularios móviles */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 16px; /* Evitar zoom en iOS */
+    }
+    
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    /* Menú móvil mejorado */
+    .nav-toggle .bar {
+        background: #ffffff !important;
+    }
+    
+    /* Optimización de rendimiento móvil */
+    * {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    /* Scroll suave móvil */
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Específico para iPhone */
+@media only screen and (device-width: 375px) and (device-height: 812px) {
+    .hero {
+        min-height: calc(100vh - 80px);
+    }
+}
+
+/* Específico para Android */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+    body {
+        background: #000000 !important;
+    }
+    
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.8) !important;
+    }
+}
