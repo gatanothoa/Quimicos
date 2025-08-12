@@ -27,19 +27,23 @@
       <img src="../assets/imgs/logo-vemer.png" alt="Grupo Vemer - Distribuidora de Productos Químicos" class="logo" style="background:transparent;box-shadow:none;padding:0;max-height:64px;max-width:220px;">
     </div>
     <nav class="main-nav" aria-label="Navegación principal">
-  <a href="../index.html">Inicio</a>
-  <a href="reactivos.html">Reactivos</a>
-  <a href="vidrieria.html">Vidriería</a>
-  <a href="material-plastico.html">Material plástico</a>
-  <a href="medios-cultivo.html">Medios de cultivo</a>
-  <a href="equipos.html" class="active">Equipos de laboratorio</a>
-  <a href="reactores-y-varios.html">Reactores y Varios</a>
-  <a href="instrumentos-quirurgicos.html">Instrumentos quirúrgicos</a>
-  <a href="../contacto.html">Contacto</a>
+      <a href="../index.html">Inicio</a>
+      <a href="reactivos.html">Reactivos</a>
+      <a href="vidrieria.html">Vidriería</a>
+      <a href="material-plastico.html">Material plástico</a>
+      <a href="medios-cultivo.html">Medios de cultivo</a>
+      <a href="equipos.html" class="active">Equipos de laboratorio</a>
+      <a href="reactores-y-varios.html">Reactores y Varios</a>
+      <a href="instrumentos-quirurgicos.html">Instrumentos quirúrgicos</a>
+      <a href="../contacto.html">Contacto</a>
     </nav>
   </div>
 </header>
 <main class="container">
+  <form class="search" role="search" aria-label="Buscar productos" onsubmit="return false;" style="margin-bottom:18px;max-width:420px">
+  <input id="searchInput" placeholder="Busca por producto o categoría" aria-label="Buscar producto o categoría" autocomplete="off">
+  <div id="searchResults" class="card" style="margin-top:10px;display:none;"></div>
+  </form>
   <section class="cat-hero">
     <h1>Equipos de laboratorio</h1>
     <p class="lead">Hornos, campanas de flujo laminar, incubadoras, agitadores y más.</p>
@@ -79,7 +83,7 @@
       <div style="margin-top:8px">Síguenos en redes</div>
     </div>
   </div>
-  <div style="margin-top:12px;font-size:12px;color:var(--muted)">© Grupo Vemer - Diseño renovado por ChatGPT (local)</div>
+  <div style="margin-top:12px;font-size:12px;color:var(--muted)">© Grupo Vemer</div>
 </footer>
 
 <script src='../js/main.js'></script>

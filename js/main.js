@@ -25,33 +25,80 @@ document.addEventListener('DOMContentLoaded', function(){
   animateOnLoad('.product');
   animateOnLoad('.card,aside.card', 120);
   const searchInput = document.getElementById('searchInput');
-  if(searchInput){
+  const searchBtn = document.getElementById('searchBtn');
+  const searchResults = document.getElementById('searchResults');
+
+  // Búsqueda dinámica en reactivos.html y vidrieria.html
+  let productosDinamicos = null;
+  async function cargarProductosDinamicos() {
+    if(productosDinamicos) return productosDinamicos;
+    productosDinamicos = [];
+    const paginas = [
+      { url: 'categorias/reactivos.html', cat: 'Reactivos' },
+      { url: 'categorias/vidrieria.html', cat: 'Vidriería' }
+    ];
+    for(const pag of paginas) {
+      try {
+        const res = await fetch(pag.url);
+        const html = await res.text();
+        const temp = document.createElement('div');
+        temp.innerHTML = html;
+        temp.querySelectorAll('.product').forEach(prod => {
+          const nombre = prod.querySelector('.product-title')?.textContent?.trim() || '';
+          const desc = prod.querySelector('.product-desc')?.textContent?.trim() || '';
+          productosDinamicos.push({ nombre, desc, cat: pag.cat, url: pag.url });
+        });
+      } catch(e) {}
+    }
+    return productosDinamicos;
+  }
+
+  async function mostrarResultados(q) {
+    if(!searchResults) return;
+    searchResults.innerHTML = '';
+    if(!q || q.length < 2) {
+      searchResults.style.display = 'none';
+      return;
+    }
+    const ql = q.toLowerCase();
+    const productos = await cargarProductosDinamicos();
+    const resultados = productos.filter(item =>
+      item.nombre.toLowerCase().includes(ql) ||
+      item.desc.toLowerCase().includes(ql) ||
+      item.cat.toLowerCase().includes(ql)
+    );
+    if(resultados.length === 0) {
+      searchResults.innerHTML = '<div style="color:var(--muted);text-align:center">No se encontraron productos.</div>';
+    } else {
+      searchResults.innerHTML = resultados.map(item =>
+        `<div style='margin-bottom:10px'>
+          <a href='../${item.url}' style='font-weight:600;color:var(--primary);text-decoration:none'>${item.nombre}</a><br>
+          <span style='font-size:0.95em;color:var(--muted)'>${item.cat}</span><br>
+          <span style='font-size:0.95em;'>${item.desc}</span>
+        </div>`
+      ).join('');
+    }
+    searchResults.style.display = 'block';
+  }
+
+  if(searchInput && searchResults){
     searchInput.addEventListener('input', function(e){
-      const q = e.target.value.toLowerCase();
-      let found = false;
-      document.querySelectorAll('.product').forEach(p => {
-        const name = p.querySelector('.product-title')?.textContent?.toLowerCase() || '';
-        const cat = p.dataset.cat?.toLowerCase() || '';
-        const match = (name.includes(q) || cat.includes(q));
-        p.style.display = match ? 'flex' : 'none';
-        if(match) found = true;
-      });
-      // Feedback visual si no hay resultados
-      if(!found && q.length > 0){
-        if(!document.getElementById('noResultsMsg')){
-          const msg = document.createElement('div');
-          msg.id = 'noResultsMsg';
-          msg.textContent = 'No se encontraron productos.';
-          msg.style = 'color:var(--muted);margin:18px 0 0 0;text-align:center;font-size:1.1em;';
-          document.getElementById('productsGrid').appendChild(msg);
-        }
-      }else{
-        const msg = document.getElementById('noResultsMsg');
-        if(msg) msg.remove();
-      }
+      mostrarResultados(e.target.value);
     });
+    if(searchBtn){
+      searchBtn.addEventListener('click', function(){
+        mostrarResultados(searchInput.value);
+      });
+    }
+    if(searchInput.form){
+      searchInput.form.addEventListener('submit', function(e){
+        e.preventDefault();
+        mostrarResultados(searchInput.value);
+      });
+    }
   }
   // Scroll suave para anclas
+
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e){
       const target = document.querySelector(this.getAttribute('href'));
