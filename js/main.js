@@ -67,14 +67,21 @@ document.addEventListener('DOMContentLoaded', function(){
       item.desc.toLowerCase().includes(ql) ||
       item.cat.toLowerCase().includes(ql)
     );
+    // Función para escapar caracteres peligrosos
+    function escapeHTML(str) {
+      return str.replace(/[&<>"']/g, function(tag) {
+        const chars = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'};
+        return chars[tag] || tag;
+      });
+    }
     if(resultados.length === 0) {
       searchResults.innerHTML = '<div style="color:var(--muted);text-align:center">No se encontraron productos.</div>';
     } else {
       searchResults.innerHTML = resultados.map(item =>
         `<div style='margin-bottom:10px'>
-          <a href='../${item.url}' style='font-weight:600;color:var(--primary);text-decoration:none'>${item.nombre}</a><br>
-          <span style='font-size:0.95em;color:var(--muted)'>${item.cat}</span><br>
-          <span style='font-size:0.95em;'>${item.desc}</span>
+          <a href='../${escapeHTML(item.url)}' style='font-weight:600;color:var(--primary);text-decoration:none'>${escapeHTML(item.nombre)}</a><br>
+          <span style='font-size:0.95em;color:var(--muted)'>${escapeHTML(item.cat)}</span><br>
+          <span style='font-size:0.95em;'>${escapeHTML(item.desc)}</span>
         </div>`
       ).join('');
     }
