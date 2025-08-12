@@ -1,96 +1,143 @@
-<!doctype html>
-<html lang="es">
+
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/Organization">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Distribuidora de Productos Químicos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Grupo Vemer - Productos Químicos</title>
+  <meta name="description" content="Soluciones integrales en insumos, reactivos y equipos para laboratorio. Atención personalizada y calidad garantizada.">
+  <meta property="og:title" content="Grupo Vemer - Productos Químicos">
+  <meta property="og:description" content="Soluciones integrales en insumos, reactivos y equipos para laboratorio. Atención personalizada y calidad garantizada.">
+  <meta property="og:image" content="assets/imgs/logo-vemer.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="assets/imgs/logo-vemer.png" alt="Grupo Vemer - Distribuidora de Productos Químicos" class="logo" style="background:transparent;box-shadow:none;padding:0;max-height:64px;max-width:220px;">
+<header class="header container" role="banner">
+  <div class="brand" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+    <img src="assets/imgs/logo-vemer.png" alt="Grupo Vemer" itemprop="url">
+    <div>
+      <div style="font-weight:700;color:var(--primary)" itemprop="name">Grupo Vemer</div>
+      <div style="font-size:12px;color:var(--muted)">Soluciones en insumos químicos y laboratorio</div>
     </div>
-    <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="categorias/reactivos.html">Reactivos</a>
-      <a href="categorias/vidrieria.html">Vidriería</a>
-      <a href="categorias/material-plastico.html">Material plástico</a>
-      <a href="categorias/medios-cultivo.html">Medios de cultivo</a>
-      <a href="categorias/equipos.html">Equipos de laboratorio</a>
-      <a href="categorias/reactores-y-varios.html">Reactores y Varios</a>
-      <a href="categorias/instrumentos-quirurgicos.html">Instrumentos quirúrgicos</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
   </div>
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="categorias/reactivos.html">Reactivos</a>
+  <a href="categorias/vidrieria.html">Vidriería</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
 </header>
-<main class="container">
-  <section class="hero" style="animation:fadeInUp .7s cubic-bezier(.4,0,.2,1);">
-    <div class="hero-left">
-      <h1 style="text-shadow:0 2px 12px rgba(0,0,0,0.12);">Distribuidora de Productos Químicos</h1>
-      <p class="lead">Material y equipo para laboratorio — soluciones y marcas confiables para tu trabajo.</p>
-      <a class="btn" href="contacto.html">Contacto</a>
-    </div>
-    <div class="hero-right">
-      <div class="carousel" id="brandCarousel" aria-label="Marcas">
-        <button class="carousel-btn prev" aria-label="Anterior">‹</button>
-        <div class="carousel-track">
-            <img src="assets/imgs/marca1.svg" alt="JT BAKER" class="carousel-item">
-            <img src="assets/imgs/marca2.svg" alt="MEYER" class="carousel-item">
-            <img src="assets/imgs/marca3.svg" alt="FEMONT" class="carousel-item">
-            <img src="assets/imgs/marca4.svg" alt="MERCK" class="carousel-item">
-            <img src="assets/imgs/marca5.svg" alt="SIGMA" class="carousel-item">
-            <img src="assets/imgs/marca6.svg" alt="KIMAX" class="carousel-item">
-            <img src="assets/imgs/marca7.svg" alt="PYRES" class="carousel-item">
-            <img src="assets/imgs/marca8.svg" alt="BRAND DURAN" class="carousel-item">
-            <img src="assets/imgs/marca9.svg" alt="CRM-GLOBE" class="carousel-item">
-            <img src="assets/imgs/marca10.svg" alt="BIOXON" class="carousel-item">
-            <img src="assets/imgs/marca11.svg" alt="DIBICO" class="carousel-item">
-            <img src="assets/imgs/marca12.svg" alt="SYM" class="carousel-item">
+<main class="container" id="main-content">
+  <section class="hero" aria-label="Presentación">
+    <div class="hero-inner">
+      <h1>Tu aliado en insumos y equipos de laboratorio</h1>
+      <p>En <strong>Grupo Vemer</strong> ofrecemos soluciones integrales para laboratorios, industria y educación: reactivos, vidriería, equipos y asesoría técnica. Calidad, respaldo y atención personalizada.</p>
+      <div class="cta-group">
+        <a class="cta" href="categorias/reactivos.html">Catálogo de productos</a>
+        <a class="cta cta-outline" href="contacto.html">Solicita asesoría</a>
+      </div>
+      <form class="search" role="search" aria-label="Buscar productos" onsubmit="return false;">
+        <input id="searchInput" placeholder="Busca por producto o categoría" aria-label="Buscar producto o categoría" autocomplete="off">
+      </form>
+      <div class="card" style="margin-top:12px">
+        <strong>Marcas líderes que distribuimos</strong>
+        <div class="brand-logos" style="margin-top:10px">
+          <img src="assets/imgs/jt-baker.png" alt="JT Baker">
+          <img src="assets/imgs/merck.png" alt="Merck">
+          <img src="assets/imgs/meyer.png" alt="Meyer">
+          <img src="assets/imgs/femont.png" alt="Femont">
         </div>
-        <button class="carousel-btn next" aria-label="Siguiente">›</button>
+        <div style="font-size:12px;color:var(--muted);margin-top:8px">Productos originales y garantía de calidad.</div>
       </div>
     </div>
+    <aside class="card" aria-label="Contacto rápido">
+      <strong>¿Necesitas ayuda?</strong>
+      <div style="margin-top:8px;color:var(--muted)">Solicita una cotización, asesoría técnica o información de productos.</div>
+      <div style="margin-top:12px"><a class="cta" href="contacto.html">Contáctanos</a></div>
+    </aside>
   </section>
-
-  <section class="about" style="animation-delay:.1s;">
-    <h2>Misión</h2>
-    <p>Cumplir en tiempo y forma con nuestros tiempos de entrega y dar un mejor servicio de calidad a nuestros clientes.</p>
-    <h2>Visión</h2>
-    <p>Ser una empresa reconocida a nivel estatal, caracterizándonos por la calidad de servicio.</p>
-    <h2>Presentación</h2>
-    <p>Ofrecemos material de laboratorio: reactivos químicos, vidriería, equipos de laboratorio, medios de cultivo y material de seguridad.</p>
-  </section>
-
-  <section class="productos-home" style="animation:fadeInUp .7s cubic-bezier(.4,0,.2,1) .15s both;">
-    <h2 style="text-align:center;letter-spacing:0.5px;">Categorías</h2>
-    <div class="cards-grid">
-      <a class="card" href="categorias/reactivos.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca1.svg')"></div><h3>Reactivos</h3><p>Reactivos químicos. (Listas de ejemplo extraídas del catálogo.)</p></a>
-      <a class="card" href="categorias/vidrieria.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca2.svg')"></div><h3>Vidriería</h3><p>Vidriería: vasos de precipitado, matraces, probetas, tubos de cultivo, etc.</p></a>
-      <a class="card" href="categorias/material-plastico.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca3.svg')"></div><h3>Material plástico</h3><p>Material plástico para laboratorio: vasos, probetas, gradillas, pisetas.</p></a>
-      <a class="card" href="categorias/medios-cultivo.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca4.svg')"></div><h3>Medios de cultivo</h3><p>Medios y agares: Agar dextrosa y papa, gelatina bacteriológica, caldo soya tripicaseina.</p></a>
-      <a class="card" href="categorias/equipos.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca5.svg')"></div><h3>Equipos de laboratorio</h3><p>Hornos, campanas de flujo laminar, incubadoras, agitadores y más.</p></a>
-      <a class="card" href="categorias/reactores-y-varios.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca6.svg')"></div><h3>Reactores y Varios</h3><p>Reactores, desaladores, biorreactores, desestiladores y equipos varios.</p></a>
-      <a class="card" href="categorias/instrumentos-quirurgicos.html" tabindex="0"><div class="card-thumb" style="background-image:url('assets/imgs/marca7.svg')"></div><h3>Instrumentos quirúrgicos</h3><p>Pinzas, batas, gorros, guantes y otros insumos médicos.</p></a>
+  <section style="margin-top:18px" aria-label="Productos y servicios">
+    <h2 style="color:var(--primary)">¿Qué ofrecemos?</h2>
+    <div class="product-grid" id="productsGrid">
+      <article class="product" data-cat="Equipos">
+        <img src="assets/imgs/marca1.svg" alt="Equipos">
+        <div>
+          <div class="product-title">Equipos</div>
+          <div class="product-desc">Instrumental y equipos para laboratorio y procesos.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Instrumentos Quirurgicos">
+        <img src="assets/imgs/marca1.svg" alt="Instrumentos Quirúrgicos">
+        <div>
+          <div class="product-title">Instrumentos Quirúrgicos</div>
+          <div class="product-desc">Herramientas de precisión para laboratorio y clínica.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Material Plastico">
+        <img src="assets/imgs/marca1.svg" alt="Material Plástico">
+        <div>
+          <div class="product-title">Material Plástico</div>
+          <div class="product-desc">Consumibles y recipientes plásticos de alta calidad.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Medios Cultivo">
+        <img src="assets/imgs/marca1.svg" alt="Medios de Cultivo">
+        <div>
+          <div class="product-title">Medios de Cultivo</div>
+          <div class="product-desc">Medios y soluciones para microbiología y biotecnología.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Reactivos">
+        <img src="assets/imgs/marca1.svg" alt="Reactivos">
+        <div>
+          <div class="product-title">Reactivos</div>
+          <div class="product-desc">Reactivos analíticos y químicos certificados.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Reactores Y Varios">
+        <img src="assets/imgs/marca1.svg" alt="Reactores y Varios">
+        <div>
+          <div class="product-title">Reactores y Varios</div>
+          <div class="product-desc">Soluciones para síntesis, mezclado y más.</div>
+        </div>
+      </article>
+      <article class="product" data-cat="Vidrieria">
+        <img src="assets/imgs/marca1.svg" alt="Vidriería">
+        <div>
+          <div class="product-title">Vidriería</div>
+          <div class="product-desc">Vidriería científica y accesorios especializados.</div>
+        </div>
+      </article>
     </div>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© <span id="year"></span> Grupo Distribuidora de Productos Químicos</p>
-    <p>Contacto: <a href="mailto:grupovemer@hotmail.com">grupovemer@hotmail.com</a> — Tel: 2221116056 / 2221613235</p>
+<footer class="footer container" role="contentinfo">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <strong itemprop="name">Grupo Vemer</strong>
+      <div style="margin-top:6px;color:var(--muted)">
+        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="streetAddress">Av. Ejemplo 123</span>,
+          <span itemprop="addressLocality">CDMX</span>
+        </span><br>
+        <a href="mailto:ventas@grupovemer.com" style="color:var(--primary)" itemprop="email">ventas@grupovemer.com</a><br>
+        <span itemprop="telephone">Tel: 55 1234 5678</span>
+      </div>
+    </div>
+    <div style="text-align:right;color:var(--muted)">
+      <div>Síguenos en redes:</div>
+      <div style="margin-top:8px">
+        <a href="#" style="color:var(--primary);text-decoration:none;font-weight:600" aria-label="Facebook">Facebook</a> |
+        <a href="#" style="color:var(--primary);text-decoration:none;font-weight:600" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
   </div>
+  <div style="margin-top:12px;font-size:12px;color:var(--muted)">© 2025 Grupo Vemer. Todos los derechos reservados.</div>
 </footer>
-
-<a class="whatsapp-float" href="https://wa.me/522221116056" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M0 0h32v32H0z" fill="none"/><path d="M16 3C9.373 3 4 8.373 4 15c0 2.65.87 5.1 2.36 7.1L4 29l7.18-2.32A12.93 12.93 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.98 0-3.89-.52-5.54-1.5l-.39-.23-4.29 1.39 1.4-4.18-.25-.4A9.98 9.98 0 0 1 6 15c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.07-7.75c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.56-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.34-.26.26-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3.01.15.2 2.03 3.1 4.93 4.22.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg>
-</a>
-
 <script src="js/main.js"></script>
 </body>
 </html>

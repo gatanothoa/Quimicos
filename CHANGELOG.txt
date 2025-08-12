@@ -1,0 +1,8 @@
+
+Changelog - Rediseño
+- Reemplazado CSS por un diseño moderno y profesional.
+- Re-estructurada index.html con hero, búsqueda y grid de productos.
+- Eliminado y desactivado el carrusel (JS simplificado).
+- Envoltorio de páginas de categorias y contacto con nuevo header/footer.
+- Añadido README y este changelog.
+- Fecha de modificación: 2025-08-12
