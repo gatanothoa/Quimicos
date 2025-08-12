@@ -60,13 +60,18 @@ document.addEventListener('DOMContentLoaded', function(){
       searchResults.style.display = 'none';
       return;
     }
-    const ql = q.toLowerCase();
+    // Función para normalizar y quitar acentos/diacríticos
+      function normalizar(str) {
+        return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+    const ql = normalizar(q);
     const productos = await cargarProductosDinamicos();
-    const resultados = productos.filter(item =>
-      item.nombre.toLowerCase().includes(ql) ||
-      item.desc.toLowerCase().includes(ql) ||
-      item.cat.toLowerCase().includes(ql)
-    );
+      const resultados = productos.filter(item => {
+        const nombreNorm = normalizar(item.nombre);
+        const descNorm = normalizar(item.desc);
+        const catNorm = normalizar(item.cat);
+        return nombreNorm.includes(ql) || descNorm.includes(ql) || catNorm.includes(ql);
+      });
     // Función para escapar caracteres peligrosos
     function escapeHTML(str) {
       return str.replace(/[&<>"']/g, function(tag) {
@@ -75,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     }
     if(resultados.length === 0) {
-      searchResults.innerHTML = '<div style="color:var(--muted);text-align:center">No se encontraron productos.</div>';
+      searchResults.innerHTML = '<div style="color:var(--accent);background:#fff3f3;padding:16px 10px;border-radius:8px;text-align:center;font-weight:600;">No se encontraron productos para tu búsqueda.</div>';
     } else {
       searchResults.innerHTML = resultados.map(item =>
         `<div style='margin-bottom:10px'>
