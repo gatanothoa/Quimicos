@@ -5,17 +5,36 @@
   --primary:#1a237e; /* Azul oscuro */
   --accent:#ff7043;  /* Coral/naranja */
   --muted:#607d8b;  /* Gris azulado */
-  --bg:#f5f7fa;     /* Fondo gris muy claro */
+  --bg:#e7eaf1;     /* Fondo gris azulado suave */
   --card:#ffffff;    /* Tarjetas blancas */
-  --maxw:1200px;
+  --maxw:1100px;
   --radius:14px;
   --shadow:0 6px 24px rgba(26,35,126,0.08);
   --sans: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
   --transition: all 0.18s cubic-bezier(.4,0,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:var(--sans);background:linear-gradient(180deg,#e3eafc 0%,#f5f7fa 100%);color:#1a237e;-webkit-font-smoothing:antialiased;scroll-behavior:smooth;}
-.container{max-width:var(--maxw);margin:0 auto;padding:16px;}
+html,body{
+  height:100%;
+  font-family:var(--sans);
+  background:linear-gradient(180deg,#e7eaf1 0%,#d3d7e3 100%);
+  color:#1a237e;
+  -webkit-font-smoothing:antialiased;
+  scroll-behavior:smooth;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:50% 50%;
+  transition:background-position 0.25s cubic-bezier(.4,0,.2,1);
+}
+.container{
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:0.5vw;
+  padding-right:0.5vw;
+  padding-top:12px;
+  padding-bottom:12px;
+}
 /* Header y navegación */
 .header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px}
@@ -47,12 +66,50 @@ html,body{height:100%;font-family:var(--sans);background:linear-gradient(180deg,
 /* Cards y productos */
 .card{background:var(--card);padding:18px 14px;border-radius:14px;box-shadow:var(--shadow);transition:box-shadow .18s;}
 .card:hover{box-shadow:0 10px 32px rgba(26,35,126,0.13);}
-.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
-.product{background:var(--card);padding:14px;border-radius:12px;border:1px solid #e3eafc;display:flex;gap:14px;align-items:center;box-shadow:0 2px 8px rgba(26,35,126,0.04);transition:box-shadow .18s,transform .18s;}
-.product:hover{box-shadow:0 8px 24px rgba(255,112,67,0.13);transform:translateY(-2px) scale(1.03);}
-.product img{height:64px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 6px #e3eafc);}
-.product-title{font-weight:700;color:var(--primary);font-size:1.1rem;}
-.product-desc{font-size:13px;color:var(--muted);margin-top:2px;}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:22px;
+  margin-top:18px;
+}
+.product{
+  background:var(--card);
+  padding:22px 18px;
+  border-radius:16px;
+  border:1.5px solid #e3eafc;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:16px;
+  min-height:220px;
+  box-shadow:0 2px 12px rgba(26,35,126,0.06);
+  transition:box-shadow .18s,transform .18s;
+  justify-content:space-between;
+}
+.product:hover{
+  box-shadow:0 8px 24px rgba(255,112,67,0.13);
+  transform:translateY(-2px) scale(1.03);
+}
+.product img{
+  height:64px;
+  width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 6px #e3eafc);
+  align-self:center;
+}
+.product-title{
+  font-weight:700;
+  color:var(--primary);
+  font-size:1.18rem;
+  margin-bottom:2px;
+}
+.product-desc{
+  font-size:15px;
+  color:var(--muted);
+  margin-top:2px;
+  text-align:justify;
+}
 
 /* Footer */
 .footer{border-top:1px solid #e3eafc;padding:18px;margin-top:28px;color:var(--muted);background:linear-gradient(90deg,#e3eafc 60%,#ff704311 100%);}
@@ -80,7 +137,7 @@ img{max-width:100%;height:auto;}
 
 
 @media(max-width:600px){
-  .container{padding:8px;}
+  .container{padding-left:2vw;padding-right:2vw;}
   .header{flex-direction:column;align-items:flex-start;gap:8px;}
   .brand{flex-direction:row;align-items:center;gap:8px;}
   .brand img{height:40px;}
