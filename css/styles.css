@@ -172,15 +172,21 @@ img{max-width:100%;height:auto;}
 
 
 @media(max-width:600px){
-  .container{padding-left:2vw;padding-right:2vw;}
+  .container{padding-left:0.5vw;padding-right:0.5vw;}
   .header{flex-direction:column;align-items:flex-start;gap:8px;}
   .brand{flex-direction:row;align-items:center;gap:8px;}
   .brand img{height:40px;}
   .nav{flex-wrap:wrap;gap:10px 16px;justify-content:flex-start;width:100%;font-size:1rem;}
   .nav a{padding:2px 0;}
-  .hero-inner{padding:14px 6px;}
-  .card{padding:10px 6px;}
+  .hero-inner{padding:14px 2px;}
+  .card{padding:10px 2px;max-width:98vw;}
   .product-grid{grid-template-columns:1fr;}
+  .product, .card {
+    max-width:98vw !important;
+    min-width:0;
+    width:98vw !important;
+    box-sizing:border-box;
+  }
   .product-desc, .product-title {
     text-align:left !important;
     word-break:break-word;
