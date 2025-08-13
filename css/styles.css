@@ -1,3 +1,22 @@
+.product-title {
+  word-break:break-word;
+  overflow-wrap:break-word;
+  white-space:normal !important;
+  max-width:100%;
+  box-sizing:border-box;
+}
+
+@media(max-width:600px){
+  .product-title {
+    font-size:1.15rem !important;
+    text-align:left !important;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    white-space:normal !important;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+}
 
 /* Redesigned professional stylesheet - mobile-first */
 /* Fuente profesional y variables mejoradas */
@@ -162,6 +181,15 @@ img{max-width:100%;height:auto;}
   .hero-inner{padding:14px 6px;}
   .card{padding:10px 6px;}
   .product-grid{grid-template-columns:1fr;}
+  .product-desc, .product-title {
+    text-align:left !important;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    white-space:normal !important;
+    hyphens:auto;
+    max-width:100%;
+    box-sizing:border-box;
+  }
 }
 
 @media(min-width:900px){
