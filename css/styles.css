@@ -120,8 +120,24 @@ html,body{
 .search input:focus{outline:none;border:1.5px solid var(--accent);box-shadow:0 2px 8px #ff704322;}
 
 /* Marcas */
-.brand-logos{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.brand-logos img{height:46px;opacity:0.95;border-radius:8px;background:white;padding:6px;border:1px solid #e3eafc;transition:box-shadow .18s,transform .18s;}
+.brand-logos{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+.brand-logos img{
+  height:92px;
+  opacity:0.98;
+  border-radius:10px;
+  background:white;
+  padding:10px;
+  border:1.5px solid #e3eafc;
+  transition:box-shadow .18s,transform .18s;
+  box-shadow:0 4px 18px #e3eafc55;
+}
 .brand-logos img:hover{box-shadow:0 4px 16px #ff704344;transform:scale(1.07);}
 
 /* Accesibilidad y detalles */
