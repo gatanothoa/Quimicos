@@ -1,17 +1,14 @@
-// Efecto parallax sutil al mover el mouse sobre el fondo
 document.addEventListener('mousemove', function(e) {
   const x = (e.clientX / window.innerWidth - 0.5) * 10;
   const y = (e.clientY / window.innerHeight - 0.5) * 10;
   document.body.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
-});
+// ...fin del archivo, todo el código está dentro del evento DOMContentLoaded
 
-// Redesigned main JS - simple client-side search and small interactions
-
-// Animación de entrada para productos y tarjetas
 function animateOnLoad(selector, delay=60) {
   const items = document.querySelectorAll(selector);
   items.forEach((el, i) => {
     el.style.opacity = 0;
+  /* =========================================================
     el.style.transform = 'translateY(24px)';
     setTimeout(() => {
       el.style.transition = 'opacity 0.5s, transform 0.5s';
@@ -24,11 +21,11 @@ function animateOnLoad(selector, delay=60) {
 document.addEventListener('DOMContentLoaded', function(){
   animateOnLoad('.product');
   animateOnLoad('.card,aside.card', 120);
+  /* =========================================================
   const searchInput = document.getElementById('searchInput');
   const searchBtn = document.getElementById('searchBtn');
   const searchResults = document.getElementById('searchResults');
 
-  // Búsqueda dinámica en reactivos.html y vidrieria.html
   let productosDinamicos = null;
   async function cargarProductosDinamicos() {
     if(productosDinamicos) return productosDinamicos;
@@ -44,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const temp = document.createElement('div');
         temp.innerHTML = html;
         temp.querySelectorAll('.product').forEach(prod => {
+  /* =========================================================
           const nombre = prod.querySelector('.product-title')?.textContent?.trim() || '';
           const desc = prod.querySelector('.product-desc')?.textContent?.trim() || '';
           productosDinamicos.push({ nombre, desc, cat: pag.cat, url: pag.url });
@@ -57,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function(){
     if(!searchResults) return;
     searchResults.innerHTML = '';
     if(!q || q.length < 2) {
+    /* =========================================================
       searchResults.style.display = 'none';
       return;
     }
-    // Función para normalizar y quitar acentos/diacríticos
       function normalizar(str) {
-        return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
     }
     const ql = normalizar(q);
     const productos = await cargarProductosDinamicos();
@@ -72,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function(){
         const catNorm = normalizar(item.cat);
         return nombreNorm.includes(ql) || descNorm.includes(ql) || catNorm.includes(ql);
       });
-    // Función para escapar caracteres peligrosos
     function escapeHTML(str) {
       return str.replace(/[&<>"']/g, function(tag) {
         const chars = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'};
@@ -93,6 +90,15 @@ document.addEventListener('DOMContentLoaded', function(){
     searchResults.style.display = 'block';
   }
 
+  /* =========================================================
+     BLOQUE: Renderizado de resultados y eventos de búsqueda
+     Propósito: Muestra los resultados y gestiona los eventos de input, click y submit.
+     ¿Cómo modificar?: Personaliza el HTML de los resultados o los eventos según tu flujo.
+     No elimines estos eventos, son esenciales para la interacción de búsqueda.
+     ========================================================= */
+    searchResults.style.display = 'block';
+  }
+
   if(searchInput && searchResults){
     searchInput.addEventListener('input', function(e){
       mostrarResultados(e.target.value);
@@ -109,8 +115,12 @@ document.addEventListener('DOMContentLoaded', function(){
       });
     }
   }
-  // Scroll suave para anclas
-
+  /* =========================================================
+     BLOQUE: Scroll suave para anclas
+     Propósito: Permite desplazamiento animado al hacer clic en enlaces internos.
+     ¿Cómo modificar?: Puedes cambiar el comportamiento de scroll o el selector de anclas.
+     No elimines este bloque, mejora la experiencia de navegación.
+     ========================================================= */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e){
       const target = document.querySelector(this.getAttribute('href'));

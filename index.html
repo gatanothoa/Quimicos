@@ -1,7 +1,19 @@
+<!-- =============================== -->
+<!-- Archivo principal: index.html   -->
+<!-- Propósito: Página de inicio del sitio web Grupo Vemer. -->
+<!-- Estructura general: Head, Header, Main, Footer, Scripts. -->
+<!-- Modifica solo las secciones indicadas, no elimines los comentarios explicativos. -->
+<!-- =============================== -->
 
 <!DOCTYPE html>
 <html lang="es" itemscope itemtype="http://schema.org/Organization">
 <head>
+  <!--
+    <head>
+    Propósito: Metadatos, enlaces a estilos y fuentes.
+    ¿Cómo modificar?: Cambia el título, descripción y enlaces según tu marca.
+    No elimines las etiquetas meta ni los enlaces a CSS y fuentes.
+  -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Grupo Vemer - Productos Químicos</title>
@@ -17,6 +29,12 @@
 </head>
 <body>
 <header class="header container" role="banner">
+  <!--
+    <header>
+    Propósito: Encabezado principal con logo y navegación.
+    ¿Cómo modificar?: Cambia el logo y los enlaces de navegación según tus necesidades.
+    No elimines la estructura de navegación ni el contenedor principal.
+  -->
   <div class="brand" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
     <img src="assets/imgs/logo-vemer.png" alt="Grupo Vemer" itemprop="url" style="height:72px;max-width:180px;width:auto;">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:340px;max-width:600px;margin-left:18px;">
@@ -34,7 +52,20 @@
   </div>
 </header>
 <main class="container" id="main-content">
+  <!--
+    <main>
+    Propósito: Contenido principal de la página.
+    Incluye la sección de presentación, buscador, marcas y productos.
+    ¿Cómo modificar?: Edita los textos, productos y enlaces según tu catálogo.
+    No elimines los identificadores ni las clases principales.
+  -->
   <section class="hero" aria-label="Presentación">
+    <!--
+      Sección de presentación (hero):
+      Muestra el mensaje principal, botones de acción y buscador.
+      Puedes modificar el texto, los enlaces y el contenido de la tarjeta de marcas.
+      No elimines la estructura de clases ni los roles de accesibilidad.
+    -->
     <div class="hero-inner">
       <h1>Tu aliado en insumos y equipos de laboratorio</h1>
       <p>En <strong>Grupo Vemer</strong> ofrecemos soluciones integrales para laboratorios, industria y educación: reactivos, vidriería, equipos y asesoría técnica. Calidad, respaldo y atención personalizada.</p>
@@ -58,12 +89,24 @@
       </div>
     </div>
     <aside class="card" aria-label="Contacto rápido">
+      <!--
+        Sección de contacto rápido:
+        Permite a los usuarios solicitar asesoría o información.
+        Puedes modificar el texto y el enlace de contacto.
+        No elimines el contenedor ni el botón de contacto.
+      -->
       <strong>¿Necesitas ayuda?</strong>
       <div style="margin-top:8px;color:var(--muted)">Solicita una cotización, asesoría técnica o información de productos.</div>
       <div style="margin-top:12px"><a class="cta" href="contacto.html">Contáctanos</a></div>
     </aside>
   </section>
   <section style="margin-top:18px" aria-label="Productos y servicios">
+    <!--
+      Sección de productos y servicios:
+      Muestra el catálogo resumido de productos principales.
+      Puedes agregar, quitar o modificar los productos según tu oferta.
+      No elimines la estructura de la grid ni las clases de producto.
+    -->
     <h2 style="color:var(--primary)">¿Qué ofrecemos?</h2>
     <div class="product-grid" id="productsGrid">
       <article class="product" data-cat="Equipos">
@@ -119,6 +162,12 @@
   </section>
 </main>
 <footer class="footer container" role="contentinfo">
+  <!--
+    <footer>
+    Propósito: Información de contacto y derechos de autor.
+    ¿Cómo modificar?: Cambia los datos de contacto y dirección según tu empresa.
+    No elimines el contenedor principal ni la estructura de derechos.
+  -->
   <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
     <div>
       <strong itemprop="name">Grupo Vemer</strong>
@@ -136,5 +185,11 @@
   <div style="margin-top:12px;font-size:12px;color:var(--muted)">© 2025 Grupo Vemer. Todos los derechos reservados.</div>
 </footer>
 <script src="js/main.js" defer></script>
+<!--
+  <script>
+  Propósito: Cargar la funcionalidad JS principal (buscador, animaciones, etc).
+  ¿Cómo modificar?: Edita el archivo js/main.js para cambiar la lógica de búsqueda o animaciones.
+  No elimines la referencia al script principal.
+-->
 </body>
 </html>
