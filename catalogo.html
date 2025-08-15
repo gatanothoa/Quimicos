@@ -86,7 +86,7 @@
 </footer>
 <script>
 (async function(){
-  // Cargar HTML de reactivos y vidriería
+  
   const urls = [
     'categorias/reactivos.html',
     'categorias/vidrieria.html'
@@ -108,13 +108,13 @@
       });
     } catch(e) {}
   }
-  // Agrupar por marca (empresa)
+  
   const empresas = {};
   productos.forEach(p => {
     if(!empresas[p.marca]) empresas[p.marca] = {logo: p.marcaLogo, productos: []};
     empresas[p.marca].productos.push(p);
   });
-  // Renderizar
+  
   const cont = document.getElementById('catalogo-empresas');
   cont.innerHTML = Object.keys(empresas).sort().map(marca => `
     <section class="empresa-block">

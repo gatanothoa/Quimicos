@@ -1,15 +1,9 @@
 :root{
-  /* =========================================================
-     BLOQUE: Variables globales y configuración base
-     Propósito: Define colores, tipografía y parámetros generales del sitio.
-     ¿Cómo modificar?: Cambia los valores de las variables para personalizar el diseño.
-     No elimines las variables ni el reset de estilos.
-     ========================================================= */
-  --primary:#1a237e; /* Azul oscuro */
-  --accent:#ff7043;  /* Coral/naranja */
-  --muted:#607d8b;  /* Gris azulado */
-  --bg:#e7eaf1;     /* Fondo gris azulado suave */
-  --card:#ffffff;    /* Tarjetas blancas */
+  --primary:#1a237e;
+  --accent:#ff7043;
+  --muted:#607d8b;
+  --bg:#e7eaf1;
+  --card:#ffffff;
   --maxw:1100px;
   --radius:14px;
   --shadow:0 6px 24px rgba(26,35,126,0.08);
@@ -39,11 +33,11 @@ html,body{
   padding-bottom:12px;
 }
 :root{
-  --primary:#1a237e; /* Azul oscuro */
-  --accent:#ff7043;  /* Coral/naranja */
-  --muted:#607d8b;  /* Gris azulado */
-  --bg:#e7eaf1;     /* Fondo gris azulado suave */
-  --card:#ffffff;    /* Tarjetas blancas */
+  --primary:#1a237e;
+  --accent:#ff7043;  
+  --muted:#607d8b;  
+  --bg:#e7eaf1;     
+  --card:#ffffff;    
   --maxw:1100px;
   --radius:14px;
   --shadow:0 6px 24px rgba(26,35,126,0.08);
@@ -72,36 +66,17 @@ html,body{
   padding-top:12px;
   padding-bottom:12px;
 }
-/* Header y navegación */
+
 .header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{height:56px;width:auto;transition:transform .2s;}
 .brand img:hover{transform:scale(1.07);}
-/* =========================================================
-  BLOQUE: Header y navegación principal
-  Propósito: Define el diseño del encabezado y la marca del sitio.
-  ¿Cómo modificar?: Puedes ajustar el padding, el tamaño del logo y el espaciado entre elementos.
-  No elimines las clases .header ni .brand, son esenciales para la estructura.
-  ========================================================= */
-/* =========================================================
-  BLOQUE: Navegación principal
-  Propósito: Estiliza el menú de navegación y los enlaces.
-  ¿Cómo modificar?: Cambia el gap para ajustar el espaciado, modifica colores en las variables.
-  No elimines las clases .nav ni los selectores de enlaces, son esenciales para la navegación.
-  ========================================================= */
 .nav{display:flex;gap:18px;align-items:center}
 .nav a{color:var(--primary);text-decoration:none;font-weight:600;position:relative;padding:2px 0;transition:color .18s;}
 .nav a:after{content:'';display:block;width:0;height:2px;background:var(--accent);transition:width .2s;position:absolute;bottom:-2px;left:0;}
 .nav a:hover,.nav a:focus{color:var(--accent);}
 .nav a:hover:after,.nav a:focus:after{width:100%;}
 
-/* Hero y CTA */
-/* =========================================================
-  BLOQUE: Hero y llamada a la acción (CTA)
-  Propósito: Estiliza la sección principal de bienvenida y los botones de acción.
-  ¿Cómo modificar?: Cambia colores, tamaños y espaciados para personalizar la presentación principal.
-  No elimines las clases .hero, .cta ni .cta-group, son esenciales para la estructura de bienvenida.
-  ========================================================= */
 .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;padding:28px 0}
 .hero-inner{
   background:linear-gradient(90deg, rgba(26,35,126,0.07), rgba(255,112,67,0.04));
@@ -118,13 +93,6 @@ html,body{
 .cta-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
 .cta-outline:hover,.cta-outline:focus{background:var(--primary);color:#fff;}
 
-/* Cards y productos */
-/* =========================================================
-  BLOQUE: Tarjetas y productos
-  Propósito: Estiliza las tarjetas de productos y el grid de presentación.
-  ¿Cómo modificar?: Ajusta el padding, el border-radius y el box-shadow para cambiar el aspecto de las tarjetas.
-  No elimines las clases .card, .product-grid ni .product, son esenciales para mostrar los productos.
-  ========================================================= */
 .card{background:var(--card);padding:18px 14px;border-radius:14px;box-shadow:var(--shadow);transition:box-shadow .18s;}
 .card:hover{box-shadow:0 10px 32px rgba(26,35,126,0.13);}
 
@@ -172,26 +140,13 @@ html,body{
   text-align:justify;
 }
 
-/* =========================================================
-  BLOQUE: Pie de página (Footer)
-  Propósito: Estiliza el área inferior del sitio con información adicional.
-  ¿Cómo modificar?: Cambia el color, el padding y el fondo para personalizar el footer.
-  No elimines la clase .footer, es esencial para la estructura final.
-  ========================================================= */
 .footer{border-top:1px solid #e3eafc;padding:18px;margin-top:28px;color:var(--muted);background:linear-gradient(90deg,#e3eafc 60%,#ff704311 100%);}
 
-/* Buscador */
-/* =========================================================
-  BLOQUE: Barra de búsqueda
-  Propósito: Estiliza el campo de búsqueda y su interacción.
-  ¿Cómo modificar?: Cambia el padding, border-radius y colores para personalizar el input.
-  No elimines la clase .search ni el input, son esenciales para la funcionalidad de búsqueda.
-  ========================================================= */
 .search{display:flex;gap:8px;align-items:center;margin-top:10px;}
 .search input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e3eafc;font-size:1rem;transition:box-shadow .18s,border .18s;}
 .search input:focus{outline:none;border:1.5px solid var(--accent);box-shadow:0 2px 8px #ff704322;}
 
-/* Marcas */
+
 .brand-logos{
   display:flex;
   gap:18px;
@@ -212,7 +167,6 @@ html,body{
 }
 .brand-logos img:hover{box-shadow:0 4px 16px #ff704344;transform:scale(1.07);}
 
-/* Accesibilidad y detalles */
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 img{max-width:100%;height:auto;}
 
